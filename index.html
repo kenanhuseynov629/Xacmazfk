@@ -22,7 +22,8 @@
                     <li><a href="#home">Ana Səhifə</a></li>
                     <li><a href="#about">Haqqımızda</a></li>
                     <li><a href="#players">Oyunçular</a></li>
-                    <li><a href="#matches">Matçlar</a></li>
+                    <li><a href="#bombardirler">Bombardirlər</a></li>
+                    <li><a href="#asists">Ən çox asist</a></li>
                     <li><a href="#news">Xəbərlər</a></li>
                     <li><a href="#contact">Əlaqə</a></li>
                 </ul>
@@ -38,16 +39,33 @@
     <section id="home" class="hero">
         <div class="container">
             <h2>Xaçmaz FK - Qalibiyyətin Simvolu!</h2>
-            <p>Futbol həvəskarlarını birləşdirən komanda. Gəlin birlikdə qalibiyyətə addımlaq!</p>
-            <img src="images/stadium.jpg" alt="Stadion" class="hero-img">
+            <p>Xaçmazın ən güclü kamandalarından biri ilə şansını sınamaq istəyən bizimlə əlaqə saxlasın</p>
+            <div class="matches-hero">
+                <h3>Son Matçlar</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rəqib</th>
+                            <th>Nəticə</th>
+                            <th>Tarix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ADA-Everest</td>
+                            <td>5 - 4 (məğlubiyyət)</td>
+                            <td>06.03.2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
             <h2>Haqqımızda</h2>
-            <p>Xaçmaz FK 1990-cı illərdə qurulmuş regionun ən güclü futbol komandalarından biridir. Bizim məqsədimiz
-                Azərbaycan futbolunda yeni səhifələr yazmaqdır.</p>
+            <p>Xaçmaz FK gənc Xaçmazlı həvəskar gənc futbolçuların yaratdığı bir kamandadır.</p>
         </div>
     </section>
 
@@ -56,53 +74,46 @@
             <h2>Oyunçular</h2>
             <div class="players-grid">
                 <div class="player-card">
-                    <img src="images/player1.jpg" alt="Oyunçu 1">
-                    <h3>Əli Quliyev</h3>
-                    <p>Forvard</p>
+                    <h3>Kənan Hüseynov</h3>
+                    <p>Defender - 17 yaş</p>
                 </div>
                 <div class="player-card">
-                    <img src="images/player2.jpg" alt="Oyunçu 2">
-                    <h3>Rəşad Məmmədov</h3>
-                    <p>Defender</p>
-                </div>
-                <div class="player-card">
-                    <img src="images/player3.jpg" alt="Oyunçu 3">
-                    <h3>Nicat Hüseynov</h3>
-                    <p>Qapıçi</p>
+                    <h3>Murad Səlimov</h3>
+                    <p>Forward - 17 yaş</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="matches" class="matches">
+    <section id="bombardirler" class="bombardirler about">
         <div class="container">
-            <h2>Son Matçlar</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Raki̇b</th>
-                        <th>Nəticə</th>
-                        <th>Tarix</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Qarabağ FK</td>
-                        <td>1 - 2</td>
-                        <td>15.10.2024</td>
-                    </tr>
-                    <tr>
-                        <td>Neftçi PFK</td>
-                        <td>0 - 0</td>
-                        <td>10.10.2024</td>
-                    </tr>
-                    <tr>
-                        <td>Sumqayıt FK</td>
-                        <td>3 - 1</td>
-                        <td>05.10.2024</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2>Bombardirlər</h2>
+            <div class="news-grid">
+                <article>
+                    <h3>1. Oyunçu Adı</h3>
+                    <p>5 qol</p>
+                </article>
+                <article>
+                    <h3>2. Oyunçu Adı</h3>
+                    <p>3 qol</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="asists" class="asists about">
+        <div class="container">
+            <h2>Ən çox asist edənlər</h2>
+            <div class="news-grid">
+                <article>
+                    <h3>1. Oyunçu Adı</h3>
+                    <p>4 asist</p>
+                </article>
+                <article>
+                    <h3>2. Oyunçu Adı</h3>
+                    <p>2 asist</p>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -111,12 +122,12 @@
             <h2>Son Xəbərlər</h2>
             <div class="news-grid">
                 <article>
-                    <h3>Yeni mövsümə hazırlıqlar başladı</h3>
-                    <p>Komanda yeni transferlərlə güclənir...</p>
+                    <h3>Xaçmaz FK-nın məğlubiyyətsizlik seriyası bitdi</h3>
+                    <p>Son məğlubbiyyətə baxmayaraq Xaçmaz FK daha güclənəcək. Yeni mövsümə daha güclü qayıdırıq!</p>
                 </article>
                 <article>
-                    <h3>Antrenor rəy vermək üçün hazır</h3>
-                    <p>Press konfransda yeni strategiya açıqlanıldı...</p>
+                    <h3>Yeni mövsümə hazırlıqlar başladı</h3>
+                    <p>Komanda yeni transferlərlə güclənir...</p>
                 </article>
             </div>
         </div>
@@ -125,13 +136,9 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Əlaqə</h2>
-            <p>Email: info@xacmazfk.az</p>
-            <p>Telefon: +994 50 123 45 67</p>
-            <p>Sosial şəbəkələr:
-                <a href="#">Facebook</a> |
-                <a href="#">Instagram</a> |
-                <a href="#">Telegram</a>
-            </p>
+            <p>Telefon: +994 70 224 40 06</p>
+            <p>Sosial şəbəkələr: <a
+                    href="https://www.instagram.com/xacmaz_fk/?utm_source=ig_web_button_share_sheet">Instagram</a></p>
         </div>
     </section>
 
