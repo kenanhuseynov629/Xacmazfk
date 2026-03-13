@@ -27,7 +27,7 @@ header {
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
-    padding: 1.2rem 0;
+    padding: 0.8rem 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -55,23 +55,25 @@ header .container {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
 }
 
 .logo-img {
-    width: 70px;
-    height: 70px;
-    border-radius: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    width: 90px;
+    height: 90px;
+    border: none;
+    border-radius: 0;
     transition: all 0.3s ease;
 }
 
 .logo-img:hover {
     transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
 
 .logo h1 {
     font-size: 2rem;
+    line-height: 1.1;
     font-weight: 700;
     background: linear-gradient(135deg, #fff, #f8fafc);
     -webkit-background-clip: text;
@@ -82,15 +84,16 @@ header .container {
 .nav ul {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1.5rem;
 }
 
 .nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.95rem;
     position: relative;
-    padding: 8px 0;
+    padding: 6px 0;
     transition: all 0.3s ease;
 }
 
@@ -413,8 +416,7 @@ html {
 /* Loading Animation */
 @keyframes shimmer {
     0% {
-        background-position: -468px 0;
-    }
+        background-position: -468px 0;    }
 
     100% {
         background-position: 468px 0;
