@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xaçmaz FK - Resmi Veb Sayt</title>
     <meta name="description" content="Xaçmaz FK futbol komandası. Son xəbərlər, oyunçular, matçlar.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="images/Xacmaz_fk_final.png">
 </head>
 
@@ -19,16 +19,36 @@
             </div>
             <nav class="nav" id="nav">
                 <ul>
-                    <li><a href="#home">Ana Səhifə</a></li>
-                    <li><a href="#upcoming">Gələcək Oyun</a></li>
-                    <li><a href="#about">Haqqımızda</a></li>
-                    <li><a href="#players">Oyunçular</a></li>
-                    <li><a href="#bombardirler">Bombardirlər</a></li>
-                    <li><a href="#asists">Ən çox asist</a></li>
-                    <li><a href="#news">Xəbərlər</a></li>
-                    <li><a href="#contact">Əlaqə</a></li>
+                    <li><a href="#stats" data-i18n="nav_stats">Statistika</a></li>
+                    <li><a href="#about" data-i18n="nav_about">Haqqımızda</a></li>
+                    <li><a href="#players" data-i18n="nav_players">Oyunçular</a></li>
+                    <li><a href="#news" data-i18n="nav_news">Xəbərlər</a></li>
+                    <li><a href="#contact" data-i18n="nav_contact">Əlaqə</a></li>
                 </ul>
             </nav>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="az">AZ</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+            </div>
+            <div class="dark-mode-toggle">
+                <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -39,55 +59,81 @@
 
     <section id="home" class="hero">
         <div class="container">
-            <h2>Xaçmaz FK - Qalibiyyətin Simvolu!</h2>
-            <p>Xaçmazın ən güclü kamandalarından biri ilə şansını sınamaq istəyən bizimlə əlaqə saxlasın</p>
+            <h2 data-i18n="hero_title">Xaçmaz FK - Qalibiyyətin Simvolu!</h2>
+            <p data-i18n="hero_subtitle">Xaçmazın ən güclü kamandalarından biri ilə şansını sınamaq istəyən bizimlə əlaqə
+                saxlasın</p>
             <div class="matches-hero">
-                <h3>Son Matçlar</h3>
+                <h3 data-i18n="home_last_matches">Son Matçlar</h3>
                 <table>
                     <thead>
                         <tr>
-                            <th>Rəqib</th>
-                            <th>Nəticə</th>
-                            <th>Tarix</th>
+                            <th data-i18n="table_opponent">Rəqib</th>
+                            <th data-i18n="table_score">Nəticə</th>
+                            <th data-i18n="table_date">Tarix</th>
+                            <th>MVP</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>ADA-Everest</td>
-                            <td>5 - 4 (məğlubiyyət)</td>
-                            <td>06.03.2026</td>
-                        </tr>
-                        <tr>
-                            <td>Şirvan</td>
-                            <td>13 - 7 (qalibiyyət)</td>
-                            <td>21.02.2026</td>
-                        </tr>
-                        <tr>
-                            <td>Lənkəran</td>
-                            <td>9 - 5 (qalibiyyət)</td>
-                            <td>18.12.2025</td>
-                        </tr>
+                    <tbody id="matches-tbody">
                     </tbody>
                 </table>
+
+                <div class="mvp-vote" style="margin-top: 20px;">
+                    <h4 data-i18n="mvp_title">Son Oyun MVP Seç (ADA-Everest matçı - 06.03.2026)</h4>
+                    <form id="mvp-form">
+                        <div class="player-options">
+                            <label class="player-option">
+                                <input type="radio" name="mvp-vote" value="Murad Səlimov">
+                                <span>Murad Səlimov</span>
+                            </label>
+                            <label class="player-option">
+                                <input type="radio" name="mvp-vote" value="Kənan Hüseynov">
+                                <span>Kənan Hüseynov</span>
+                            </label>
+                            <label class="player-option">
+                                <input type="radio" name="mvp-vote" value="Coşqun Məmmədov">
+                                <span>Coşqun Məmmədov</span>
+                            </label>
+                            <label class="player-option">
+                                <input type="radio" name="mvp-vote" value="Yəhya Davidov">
+                                <span>Yəhya Davidov</span>
+                            </label>
+                            <label class="player-option">
+                                <input type="radio" name="mvp-vote" value="Şakir Kərimxanov">
+                                <span>Şakir Kərimxanov</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="vote-btn" data-i18n="mvp_vote_btn">Səs Ver!</button>
+                    </form>
+                    <div id="mvp-results" class="vote-display"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="about">
+        <div class="container">
+            <h2 data-i18n="stats_title">Komanda Statistikası</h2>
+            <div id="team-stats" class="matches-hero">
+                <!-- JS ilə son matçlara əsasən statistikalar doldurulacaq -->
             </div>
         </div>
     </section>
 
     <section id="upcoming" class="about">
         <div class="container">
-            <h2>Gələcək Oyun</h2>
+            <h2 data-i18n="upcoming_title">Gələcək Oyun</h2>
             <div class="matches-hero">
                 <table>
                     <thead>
                         <tr>
-                            <th>Rəqib</th>
-                            <th>Tarix</th>
+                            <th data-i18n="table_opponent">Rəqib</th>
+                            <th data-i18n="table_date">Tarix</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Xaçmaz FK - Kürdəmir</td>
-                            <td>15.03.2026</td>
+                            <td data-i18n="upcoming_match">Xaçmaz FK - Kürdəmir</td>
+                            <td>15.03.2026, 16:00</td>
                         </tr>
                     </tbody>
                 </table>
@@ -97,34 +143,34 @@
 
     <section id="about" class="about">
         <div class="container">
-            <h2>Haqqımızda</h2>
-            <p>Xaçmaz FK gənc Xaçmazlı həvəskar gənc futbolçuların yaratdığı bir kamandadır.</p>
+            <h2 data-i18n="about_title">Haqqımızda</h2>
+            <p data-i18n="about_text">Xaçmaz FK gənc Xaçmazlı həvəskar gənc futbolçuların yaratdığı bir kamandadır.</p>
         </div>
     </section>
 
     <section id="players" class="players">
         <div class="container">
-            <h2>Oyunçular</h2>
+            <h2 data-i18n="players_title">Oyunçular</h2>
+            <h3 data-i18n="players_forwards">Forwardlar</h3>
             <div class="players-grid">
-                <div class="player-card">
-                    <h3>Kənan Hüseynov</h3>
-                    <p>Defender - 17 yaş</p>
-                </div>
                 <div class="player-card">
                     <h3>Murad Səlimov</h3>
                     <p>Forward - 17 yaş</p>
                 </div>
                 <div class="player-card">
-                    <h3>Elman Həsənov</h3>
-                    <p>Goalkeeper - 17 yaş</p>
-                </div>
-                <div class="player-card">
-                    <h3>Coşqun Məmmədov</h3>
-                    <p>Midfielder - 18 yaş</p>
-                </div>
-                <div class="player-card">
                     <h3>Yəhya Davidov</h3>
                     <p>Forward - 18 yaş</p>
+                </div>
+                <div class="player-card">
+                    <h3>Sənan Muradov</h3>
+                    <p>Forward - 18 yaş</p>
+                </div>
+            </div>
+            <h3 data-i18n="players_defenders">Defenderlar</h3>
+            <div class="players-grid">
+                <div class="player-card">
+                    <h3>Kənan Hüseynov</h3>
+                    <p>Defender - 17 yaş</p>
                 </div>
                 <div class="player-card">
                     <h3>Əli Şahpandarov</h3>
@@ -133,6 +179,20 @@
                 <div class="player-card">
                     <h3>Məhəmməd Məmmədli</h3>
                     <p>Defender - 17 yaş</p>
+                </div>
+            </div>
+            <h3 data-i18n="players_midfielders">Midfielderlər</h3>
+            <div class="players-grid">
+                <div class="player-card">
+                    <h3>Coşqun Məmmədov</h3>
+                    <p>Midfielder - 18 yaş</p>
+                </div>
+            </div>
+            <h3 data-i18n="players_goalkeepers">Goalkeeperlər</h3>
+            <div class="players-grid">
+                <div class="player-card">
+                    <h3>Elman Həsənov</h3>
+                    <p>Goalkeeper - 17 yaş</p>
                 </div>
                 <div class="player-card">
                     <h3>Şakir Kərimxanov</h3>
@@ -144,55 +204,74 @@
 
     <section id="bombardirler" class="bombardirler about">
         <div class="container">
-            <h2>Bombardirlər</h2>
-            <div class="news-grid">
-                <article>
-                    <h3>Coşqun Məmmədov</h3>
-                    <p>2 qol</p>
-                </article>
-                <article>
-                    <h3>Murad Səlimov</h3>
-                    <p>1 qol</p>
-                </article>
-                <article>
-                    <h3>Yəhya Davidov</h3>
-                    <p>1 qol</p>
-                </article>
+            <h2 data-i18n="scorers_title">Bombardirlər</h2>
+            <div class="ranking-list">
+                <div class="ranking-item first">
+                    <div class="ranking-position">1</div>
+                    <div class="ranking-content">
+                        <h3>Coşqun Məmmədov</h3>
+                        <p>2 qol</p>
+                    </div>
+                </div>
+                <div class="ranking-item">
+                    <div class="ranking-position">2</div>
+                    <div class="ranking-content">
+                        <h3>Murad Səlimov</h3>
+                        <p>1 qol</p>
+                    </div>
+                </div>
+                <div class="ranking-item">
+                    <div class="ranking-position">3</div>
+                    <div class="ranking-content">
+                        <h3>Yəhya Davidov</h3>
+                        <p>1 qol</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="asists" class="asists about">
         <div class="container">
-            <h2>Ən çox asist edənlər</h2>
-            <div class="news-grid">
-                <article>
-                    <h3>Murad Səlimov</h3>
-                    <p>2 asist</p>
-                </article>
-                <article>
-                    <h3>Yəhya Davidov</h3>
-                    <p>1 asist</p>
-                </article>
-                <article>
-                    <h3>Coşqun Məmmədov</h3>
-                    <p>1 asist</p>
-                </article>
+            <h2 data-i18n="assists_title">Ən çox asist edənlər</h2>
+            <div class="ranking-list">
+                <div class="ranking-item first">
+                    <div class="ranking-position">1</div>
+                    <div class="ranking-content">
+                        <h3>Murad Səlimov</h3>
+                        <p>2 asist</p>
+                    </div>
+                </div>
+                <div class="ranking-item">
+                    <div class="ranking-position">2</div>
+                    <div class="ranking-content">
+                        <h3>Yəhya Davidov</h3>
+                        <p>1 asist</p>
+                    </div>
+                </div>
+                <div class="ranking-item">
+                    <div class="ranking-position">3</div>
+                    <div class="ranking-content">
+                        <h3>Coşqun Məmmədov</h3>
+                        <p>1 asist</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="news" class="news">
         <div class="container">
-            <h2>Son Xəbərlər</h2>
+            <h2 data-i18n="news_title">Son Xəbərlər</h2>
             <div class="news-grid">
                 <article>
-                    <h3>Xaçmaz FK-nın məğlubiyyətsizlik seriyası bitdi</h3>
-                    <p>Son məğlubbiyyətə baxmayaraq Xaçmaz FK daha güclənəcək. Yeni mövsümə daha güclü qayıdırıq!</p>
+                    <h3 data-i18n="news_1_title">Xaçmaz FK-nın məğlubiyyətsizlik seriyası bitdi</h3>
+                    <p data-i18n="news_1_text">Son məğlubbiyyətə baxmayaraq Xaçmaz FK daha güclənəcək. Yeni mövsümə daha
+                        güclü qayıdırıq!</p>
                 </article>
                 <article>
-                    <h3>Yeni mövsümə hazırlıqlar başladı</h3>
-                    <p>Komanda yeni transferlərlə güclənir...</p>
+                    <h3 data-i18n="news_2_title">Yeni mövsümə hazırlıqlar başladı</h3>
+                    <p data-i18n="news_2_text">Komanda yeni transferlərlə güclənir...</p>
                 </article>
             </div>
         </div>
@@ -200,17 +279,17 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Əlaqə</h2>
-            <p>Telefon: +994 70 224 40 06</p>
-            <p>Təklif və iradlarınızı bildirə bilərsiniz</p>
-            <p>Sosial şəbəkələr: <a
+            <h2 data-i18n="contact_title">Əlaqə</h2>
+            <p data-i18n="contact_phone">Telefon: +994 70 224 40 06</p>
+            <p data-i18n="contact_note">Təklif və iradlarınızı bildirə bilərsiniz</p>
+            <p data-i18n="contact_socials">Sosial şəbəkələr: <a
                     href="https://www.instagram.com/xacmaz_fk/?utm_source=ig_web_button_share_sheet">Instagram</a></p>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Xaçmaz FK. Bütün hüquqlar qorunur.</p>
+            <p data-i18n="footer_text">&copy; 2024 Xaçmaz FK. Bütün hüquqlar qorunur.</p>
         </div>
     </footer>
 
