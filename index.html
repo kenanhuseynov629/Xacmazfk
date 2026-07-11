@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html lang="az">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Xaçmaz FK - Resmi Veb Sayt</title>
+
+    <meta name="description" content="Xaçmaz FK futbol komandası. Son xəbərlər, oyunçular, matçlar.">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="icon" href="images/yeni logo.png">
+
+</head>
+
+
+
+<body>
+
+    <header>
+
+        <div class="container">
+
+            <div class="logo">
+
+                <h1>Xaçmaz FK</h1>
+
+            </div>
+
+            <nav class="nav" id="nav">
+
+                <ul>
+
+                    <li><a href="#stats" data-i18n="nav_stats">Statistika</a></li>
+
+                    <li><a href="#about" data-i18n="nav_about">Haqqımızda</a></li>
+
+                    <li><a href="#players" data-i18n="nav_players">Oyunçular</a></li>
+
+                    <li><a href="#news" data-i18n="nav_news">Xəbərlər</a></li>
+
+                    <li><a href="#contact" data-i18n="nav_contact">Əlaqə</a></li>
+
+                </ul>
+
+            </nav>
+
+            <div class="lang-switcher">
+
+                <select class="lang-select" id="lang-select">
+
+                    <option value="az">AZ</option>
+
+                    <option value="en">EN</option>
+
+                    <option value="ru">RU</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="hamburger" id="hamburger">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <section id="home" class="hero">
+
+        <div class="container hero-layout">
+
+            <h2 data-i18n="hero_title">Xaçmaz FK - Qalibiyyətin Simvolu!</h2>
+
+            <p data-i18n="hero_subtitle">Xaçmazın ən güclü kamandalarından biri ilə şansını sınamaq istəyən bizimlə
+
+                əlaqə
+
+                saxlasın</p>
+
+            <div class="matches-hero">
+
+                <h3 data-i18n="home_last_matches">Son Matçlar</h3>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th data-i18n="table_opponent">Rəqib</th>
+
+                            <th data-i18n="table_score">Nəticə</th>
+
+                            <th data-i18n="table_date">Tarix</th>
+
+                            <th>MVP</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="matches-tbody">
+
+                    </tbody>
+
+                </table>
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="stats" class="about reveal">
+
+        <div class="container">
+
+            <h2 data-i18n="stats_title">Komanda Statistikası</h2>
+
+            <div id="team-stats" class="matches-hero">
+
+                <!-- JS ilə son matçlara əsasən statistikalar doldurulacaq -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="upcoming" class="about reveal-left">
+
+        <div class="container">
+
+            <h2 data-i18n="upcoming_title">Gələcək Oyun</h2>
+
+            <div class="matches-hero">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th data-i18n="table_opponent">Rəqib</th>
+
+                            <th data-i18n="table_date">Tarix</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>məlumat yoxdur</td>
+
+                            <td>-</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="about" class="about reveal-right">
+
+        <div class="container">
+
+            <h2 data-i18n="about_title">Haqqımızda</h2>
+
+            <p data-i18n="about_text">Xaçmaz FK gənc Xaçmazlı həvəskar gənc futbolçuların yaratdığı bir kamandadır.</p>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="players" class="players reveal">
+
+        <div class="container">
+
+            <h2 data-i18n="players_title">Oyunçular</h2>
+
+            <h3 data-i18n="players_forwards">Forwardlar</h3>
+
+            <div class="players-grid">
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">11</div>
+
+                    <div class="position-badge">FW</div>
+
+                    <h3>Murad Səlimov</h3>
+
+                    <p>Forward - 17 yaş</p>
+
+                </div>
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">9</div>
+
+                    <div class="position-badge">FW</div>
+
+                    <h3>Yəhya Davidov</h3>
+
+                    <p>Forward - 18 yaş</p>
+
+                </div>
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">7</div>
+
+                    <div class="position-badge">FW</div>
+
+                    <h3>Sənan Muradov</h3>
+
+                    <p>Forward - 18 yaş</p>
+
+                </div>
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">15</div>
+
+                    <div class="position-badge">FW</div>
+
+                    <h3>Elcan Durxanov</h3>
+
+                    <p>Forward - 17 yaş</p>
+
+                </div>
+
+            </div>
+
+            <h3 data-i18n="players_defenders">Defenderlar</h3>
+
+            <div class="players-grid">
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">2</div>
+
+                    <div class="position-badge">DF</div>
+
+                    <h3>Kənan Hüseynov</h3>
+
+                    <p>Defender - 17 yaş</p>
+
+                </div>
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">3</div>
+
+                    <div class="position-badge">DF</div>
+
+                    <h3>Əli Şahpandarov</h3>
+
+                    <p>Defender - 17 yaş</p>
+
+                </div>
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">4</div>
+
+                    <div class="position-badge">DF</div>
+
+                    <h3>Məhəmməd Məmmədli</h3>
+
+                    <p>Defender - 17 yaş</p>
+
+                </div>
+
+            </div>
+
+            <h3 data-i18n="players_midfielders">Midfielderlər</h3>
+
+            <div class="players-grid">
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">8</div>
+
+                    <div class="position-badge">MF</div>
+
+                    <h3>Coşqun Məmmədov</h3>
+
+                    <p>Midfielder - 18 yaş</p>
+
+                </div>
+
+            </div>
+
+            <h3 data-i18n="players_goalkeepers">Goalkeeperlər</h3>
+
+            <div class="players-grid">
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">1</div>
+
+                    <div class="position-badge">GK</div>
+
+                    <h3>Elman Həsənov</h3>
+
+                    <p>Goalkeeper - 17 yaş</p>
+
+                </div>
+
+                <div class="player-card reveal">
+
+                    <div class="player-number">99</div>
+
+                    <div class="position-badge">GK</div>
+
+                    <h3>Şakir Kərimxanov</h3>
+
+                    <p>Goalkeeper - 17 yaş</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="bombardirler" class="bombardirler about reveal-scale">
+
+        <div class="container">
+
+            <h2 data-i18n="scorers_title">Bombardirlər</h2>
+
+            <div class="ranking-list">
+
+                <div class="ranking-item first">
+
+                    <div class="ranking-position">1</div>
+
+                    <div class="ranking-content">
+
+                        <h3>Murad Səlimov</h3>
+
+                        <p>5 qol</p>
+
+                    </div>
+
+                </div>
+
+                <div class="ranking-item reveal">
+
+                    <div class="ranking-position">2</div>
+
+                    <div class="ranking-content">
+
+                        <h3>Yəhya Davidov</h3>
+
+                        <p>3 qol</p>
+
+                    </div>
+
+                </div>
+
+                <div class="ranking-item reveal">
+
+                    <div class="ranking-position">3</div>
+
+                    <div class="ranking-content">
+
+                        <h3>Coşqun Məmmədov</h3>
+
+                        <p>3 qol</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="asists" class="asists about reveal-left">
+
+        <div class="container">
+
+            <h2 data-i18n="assists_title">Ən çox asist edənlər</h2>
+
+            <div class="ranking-list">
+
+                <div class="ranking-item first">
+
+                    <div class="ranking-position">1</div>
+
+                    <div class="ranking-content">
+
+                        <h3>Yəhya Davidov</h3>
+
+                        <p>5 asist</p>
+
+                    </div>
+
+                </div>
+
+                <div class="ranking-item reveal">
+
+                    <div class="ranking-position">2</div>
+
+                    <div class="ranking-content">
+
+                        <h3>Murad Səlimov</h3>
+
+                        <p>4 asist</p>
+
+                    </div>
+
+                </div>
+
+                <div class="ranking-item reveal">
+
+                    <div class="ranking-position">3</div>
+
+                    <div class="ranking-content">
+
+                        <h3>Coşqun Məmmədov</h3>
+
+                        <p>2 asist</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="news" class="news reveal-right">
+
+        <div class="container">
+
+            <h2 data-i18n="news_title">Son Xəbərlər</h2>
+
+            <div class="news-grid">
+
+                <article class="reveal">
+
+                    <h3 data-i18n="news_1_title">Xaçmaz FK-nın məğlubiyyətsizlik seriyası bitdi</h3>
+
+                    <p data-i18n="news_1_text">Son məğlubbiyyətə baxmayaraq Xaçmaz FK daha güclənəcək. Yeni mövsümə daha
+
+                        güclü qayıdırıq!</p>
+
+                </article>
+
+                <article class="reveal">
+
+                    <h3 data-i18n="news_2_title">Xaçmaz FK toparlana bilmir</h3>
+
+                    <p data-i18n="news_2_text">Son iki məğlubiyyətdən sonra komanda yenidən qüvvə tapmağa çalışır...</p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="contact" class="contact reveal-scale">
+
+        <div class="container">
+
+            <h2 data-i18n="contact_title">Əlaqə</h2>
+
+            <p data-i18n="contact_phone">Telefon: +994 70 224 40 06</p>
+
+            <p data-i18n="contact_note">Təklif və iradlarınızı bildirə bilərsiniz</p>
+
+            <p data-i18n="contact_socials">Sosial şəbəkələr: <a
+                    href="https://www.instagram.com/xacmaz_fk/?utm_source=ig_web_button_share_sheet">Instagram</a></p>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="container">
+
+            <p data-i18n="footer_text">&copy; 2024 Xaçmaz FK. Bütün hüquqlar qorunur.</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+
+
+</html>
