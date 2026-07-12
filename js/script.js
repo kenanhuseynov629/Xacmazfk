@@ -1146,21 +1146,49 @@ function initLanguageSwitcher() {
 
 
 
-    const langSelect = document.getElementById('lang-select');
+    const langButtons = document.querySelectorAll('.lang-btn');
 
-    if (langSelect) {
+    if (langButtons.length > 0) {
 
-        langSelect.value = saved;
+        // Set active state for saved language
+
+        langButtons.forEach(btn => {
+
+            if (btn.getAttribute('data-lang') === saved) {
+
+                btn.classList.add('active');
+
+            } else {
+
+                btn.classList.remove('active');
+
+            }
+
+        });
 
 
 
-        langSelect.addEventListener('change', () => {
+        // Add click event listeners
 
-            const lang = langSelect.value;
+        langButtons.forEach(btn => {
 
-            localStorage.setItem('xacmaz_fk_lang', lang);
+            btn.addEventListener('click', () => {
 
-            applyTranslations(lang);
+                const lang = btn.getAttribute('data-lang');
+
+                localStorage.setItem('xacmaz_fk_lang', lang);
+
+                applyTranslations(lang);
+
+
+
+                // Update active states
+
+                langButtons.forEach(b => b.classList.remove('active'));
+
+                btn.classList.add('active');
+
+            });
 
         });
 

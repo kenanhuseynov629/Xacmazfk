@@ -275,6 +275,8 @@ header .container {
 
     align-items: center;
 
+    gap: 0.5rem;
+
     margin-left: 1.5rem;
 
 }
@@ -283,7 +285,7 @@ header .container {
 
 
 
-.lang-select {
+.lang-btn {
 
     border: 1px solid rgba(148, 163, 184, 0.7);
 
@@ -291,7 +293,7 @@ header .container {
 
     color: #e5e7eb;
 
-    padding: 6px 12px;
+    padding: 6px 14px;
 
     border-radius: 8px;
 
@@ -301,37 +303,87 @@ header .container {
 
     cursor: pointer;
 
-    transition: all 0.25s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     outline: none;
 
+    position: relative;
+
+    overflow: hidden;
+
 }
 
 
 
-.lang-select:hover {
+.lang-btn::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 0;
+
+    height: 0;
+
+    border-radius: 50%;
+
+    background: rgba(250, 204, 21, 0.3);
+
+    transform: translate(-50%, -50%);
+
+    transition: width 0.6s ease, height 0.6s ease;
+
+}
+
+
+
+.lang-btn:hover::before {
+
+    width: 200px;
+
+    height: 200px;
+
+}
+
+
+
+.lang-btn:hover {
 
     background: rgba(15, 23, 42, 0.6);
 
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
 }
 
 
 
-.lang-select:focus {
+.lang-btn.active {
+
+    background: linear-gradient(135deg, #facc15, #eab308);
+
+    color: #1a1a1a;
 
     border-color: #facc15;
 
-    box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.2);
+    font-weight: 700;
+
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
 
 }
 
 
 
-.lang-select option {
+.lang-btn.active:hover {
 
-    background: #1a1a1a;
+    background: linear-gradient(135deg, #fde047, #facc15);
 
-    color: #e5e7eb;
+    transform: translateY(-2px) scale(1.05);
 
 }
 
@@ -3674,6 +3726,114 @@ footer {
     footer p {
 
         font-size: 0.85rem;
+
+    }
+
+    
+
+    /* Additional mobile optimizations */
+
+    .hero-layout {
+
+        flex-direction: column;
+
+        gap: 2rem;
+
+    }
+
+    
+
+    .about p {
+
+        font-size: 1rem;
+
+        line-height: 1.6;
+
+        padding: 0 10px;
+
+    }
+
+    
+
+    .contact p {
+
+        font-size: 1rem;
+
+        margin-bottom: 0.8rem;
+
+    }
+
+    
+
+    .contact a {
+
+        font-size: 1rem;
+
+    }
+
+    
+
+    /* Better touch targets for mobile */
+
+    .nav a {
+
+        min-height: 44px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    }
+
+    
+
+    .lang-btn {
+
+        min-height: 40px;
+
+        font-size: 0.9rem;
+
+        padding: 8px 12px;
+
+    }
+
+    
+
+    /* Improved button sizing */
+
+    button,
+
+    .vote-btn {
+
+        min-height: 44px;
+
+        font-size: 1rem;
+
+    }
+
+    
+
+    /* Ensure images are responsive */
+
+    img {
+
+        max-width: 100%;
+
+        height: auto;
+
+    }
+
+    
+
+    /* Better spacing for mobile sections */
+
+    #players h3 {
+
+        font-size: 1.3rem;
+
+        margin: 1.5rem 0 0.8rem;
 
     }
 
