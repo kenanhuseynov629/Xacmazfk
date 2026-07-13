@@ -180,6 +180,8 @@ const mvpPlayers = [
 
 const matches = [
 
+    { id: '2026-07-13', opponent: '2 nömrəli', score: '5 - 3 (qalibiyyət)', date: '12.07.2026', mvp: 'Murad Səlimov' },
+
     { id: '2026-03-15', opponent: 'Kürdəmir', score: '7 - 11 (məğlubiyyət)', date: '15.03.2026', mvp: 'Murad Səlimov' },
 
     { id: '2026-03-06', opponent: 'ADA-Everest', score: '4 - 5 (məğlubiyyət)', date: '06.03.2026' },
